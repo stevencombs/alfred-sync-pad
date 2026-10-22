@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.retrocombs.syncpad</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>4C1E2A90-7B63-4D18-8F05-A2B6C9D0E1F2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5D2F3B01-8C74-4E29-9016-B3C7D0E1F203</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string>Copy</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>6E304C12-9D85-4F30-A127-C4D8E1F20314</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Share</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7F415D23-AE96-4041-B238-D5E9F2031425</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Remove</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5D2F3B01-8C74-4E29-9016-B3C7D0E1F203</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>80526E34-BF07-4152-C349-E6F003142536</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6E304C12-9D85-4F30-A127-C4D8E1F20314</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>91637F45-C018-4263-D45A-F70114253647</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7F415D23-AE96-4041-B238-D5E9F2031425</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A2748056-D129-4374-E56B-081425364758</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Steven Combs</string>
+	<key>description</key>
+	<string>Share clipboard text with your other Macs. Keyword: pad</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Sync Pad</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pad</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading Sync Pad…</string>
+				<key>script</key>
+				<string>PY="/usr/bin/python3"
+if [ ! -x "$PY" ]; then
+  PY="$(command -v python3 || true)"
+fi
+if [ -z "$PY" ]; then
+  echo '{"items":[{"title":"Python 3 is required","subtitle":"Install the Xcode command line tools","valid":false}]}'
+  exit 0
+fi
+exec "$PY" ./sync_pad.py list "$@"
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>skipuniversalaction</key>
+				<true/>
+				<key>subtext</key>
+				<string>Recent Sync Pad snippets, then this Mac's clipboard</string>
+				<key>title</key>
+				<string>Sync Pad</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>4C1E2A90-7B63-4D18-8F05-A2B6C9D0E1F2</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>PY="/usr/bin/python3"
+if [ ! -x "$PY" ]; then
+  PY="$(command -v python3 || true)"
+fi
+if [ -z "$PY" ]; then
+  echo "Python 3 is required for Sync Pad." &gt;&amp;2
+  exit 1
+fi
+exec "$PY" ./sync_pad.py copy "$@"
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5D2F3B01-8C74-4E29-9016-B3C7D0E1F203</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>PY="/usr/bin/python3"
+if [ ! -x "$PY" ]; then
+  PY="$(command -v python3 || true)"
+fi
+if [ -z "$PY" ]; then
+  echo "Python 3 is required for Sync Pad." &gt;&amp;2
+  exit 1
+fi
+exec "$PY" ./sync_pad.py share "$@"
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6E304C12-9D85-4F30-A127-C4D8E1F20314</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>PY="/usr/bin/python3"
+if [ ! -x "$PY" ]; then
+  PY="$(command -v python3 || true)"
+fi
+if [ -z "$PY" ]; then
+  echo "Python 3 is required for Sync Pad." &gt;&amp;2
+  exit 1
+fi
+exec "$PY" ./sync_pad.py remove "$@"
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7F415D23-AE96-4041-B238-D5E9F2031425</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<true/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>80526E34-BF07-4152-C349-E6F003142536</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Sync Pad</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>91637F45-C018-4263-D45A-F70114253647</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Sync Pad</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A2748056-D129-4374-E56B-081425364758</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Sync Pad
+
+Share clipboard text with your other Macs. This is separate from Alfred Clipboard History.
+
+Type `pad` in Alfred. The newest Sync Pad snippets are listed first. Clipboard history follows them.
+
+- Return copies the highlighted clip and makes it the newest clipboard item.
+- Command-Return saves that clip to Sync Pad. The pad keeps the last 30 clips. Sharing the same text again moves it to the top.
+- Option-Return removes a shared clip.
+
+Shared clips are stored in `sync-pad.json` next to your synced Alfred preferences folder, so Google Drive carries them to the other Macs. Give Drive a moment before looking on the other computer.
+
+Open `pad` on the other Mac and press Return on the shared clip. Alfred puts it on the clipboard and into Clipboard History.
+
+The pad is plain text. Share only what you would put in Google Drive.
+</string>
+	<key>uidata</key>
+	<dict>
+		<key>4C1E2A90-7B63-4D18-8F05-A2B6C9D0E1F2</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
+		<key>5D2F3B01-8C74-4E29-9016-B3C7D0E1F203</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<integer>40</integer>
+		</dict>
+		<key>80526E34-BF07-4152-C349-E6F003142536</key>
+		<dict>
+			<key>xpos</key>
+			<integer>560</integer>
+			<key>ypos</key>
+			<integer>40</integer>
+		</dict>
+		<key>6E304C12-9D85-4F30-A127-C4D8E1F20314</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<integer>190</integer>
+		</dict>
+		<key>91637F45-C018-4263-D45A-F70114253647</key>
+		<dict>
+			<key>xpos</key>
+			<integer>560</integer>
+			<key>ypos</key>
+			<integer>190</integer>
+		</dict>
+		<key>7F415D23-AE96-4041-B238-D5E9F2031425</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<integer>340</integer>
+		</dict>
+		<key>A2748056-D129-4374-E56B-081425364758</key>
+		<dict>
+			<key>xpos</key>
+			<integer>560</integer>
+			<key>ypos</key>
+			<integer>340</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>1.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/stevencombs/alfred-sync-pad</string>
+</dict>
+</plist>
