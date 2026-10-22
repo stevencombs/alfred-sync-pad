@@ -325,6 +325,8 @@ Shared clips are stored in `sync-pad.json` next to your synced Alfred preference
 Open `pad` on the other Mac and press Return on the shared clip. Alfred puts it on the clipboard and into Clipboard History.
 
 The pad is plain text. Share only what you would put in Google Drive.
+
+Guide and updates: https://stevencombs.github.io/alfred-sync-pad/
 </string>
 	<key>uidata</key>
 	<dict>
@@ -381,6 +383,6 @@ The pad is plain text. Share only what you would put in Google Drive.
 	<key>version</key>
 	<string>1.0</string>
 	<key>webaddress</key>
-	<string>https://github.com/stevencombs/alfred-sync-pad</string>
+	<string>https://stevencombs.github.io/alfred-sync-pad/</string>
 </dict>
 </plist>

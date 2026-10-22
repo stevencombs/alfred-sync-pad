@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Sync Pad · Share Alfred clipboard text with your other Macs</title>
+<meta name="description" content="Sync Pad is a free Alfred 5 workflow. Type pad, save a text clip, and open it on another Mac. Alfred Clipboard History stays on clip.">
+<meta property="og:title" content="Sync Pad · Share Alfred clipboard text with your other Macs">
+<meta property="og:description" content="An Alfred 5 workflow. Type pad, save a text clip with ⌘Return, and copy it on another Mac.">
+<link rel="canonical" href="https://stevencombs.github.io/alfred-sync-pad/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stevencombs.github.io/alfred-sync-pad/">
+<meta property="og:image" content="https://stevencombs.github.io/alfred-sync-pad/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sync Pad: share clipboard text with your other Macs. An Alfred 5 workflow. Keyword pad. Free.">
+<meta name="twitter:image" content="https://stevencombs.github.io/alfred-sync-pad/assets/og-image.png">
+<meta name="twitter:site" content="@StevenCombs">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/icon-256.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><img src="assets/icon-256.png" alt="" width="32" height="32"><span>Sync Pad</span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#install">Install</a>
+      <a href="#updates">Updates</a>
+      <a href="#faq">FAQ</a>
+      <a href="#apps">More apps</a>
+      <a href="#support">Support</a>
+    </nav>
+    <a class="btn btn-ghost btn-sm" href="https://github.com/stevencombs/alfred-sync-pad">
+      <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      GitHub
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="dot"></span>v1.0 · Free &amp; open source · Alfred 5</p>
+      <h1>Share a clipboard <span class="grad">with your other Macs.</span></h1>
+      <p class="lede">Sync Pad is an Alfred workflow. Type <code>pad</code>, save a text clip, and pick it up on another Mac. Alfred Clipboard History stays on <code>clip</code>.</p>
+
+      <div class="cmd" role="group" aria-label="Alfred keyword">
+        <span class="prompt" aria-hidden="true">⌘</span>
+        <code>pad</code>
+      </div>
+
+      <div class="cta">
+        <a class="btn btn-primary" href="https://github.com/stevencombs/alfred-sync-pad/raw/main/Sync.Pad.alfredworkflow">
+          <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M7.25 1.75a.75.75 0 011.5 0v7.19l2.22-2.22a.75.75 0 111.06 1.06l-3.5 3.5a.75.75 0 01-1.06 0l-3.5-3.5a.75.75 0 111.06-1.06l2.22 2.22V1.75zM2 13.25a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z"/></svg>
+          Download for Alfred
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/stevencombs/alfred-sync-pad">View on GitHub</a>
+      </div>
+      <p class="fine">Alfred 5 with the Powerpack · Text clips · The current package is on the main branch</p>
+    </div>
+
+    <figure class="hero-shot">
+      <div class="mock alfred" role="img" aria-label="Alfred showing the pad keyword. Two saved Sync Pad snippets are listed first, then a Clipboard divider, then a local clipboard row. Example text only.">
+        <div class="al-search"><img src="assets/icon-256.png" alt="" width="22" height="22"><span class="al-q">pad</span><span class="al-caret" aria-hidden="true"></span></div>
+        <div class="al-row on">
+          <b>Thursday standup: ship the booth signs</b>
+          <small>Sync Pad · MacBook Air · Notes · 2m ago · ↩ copy</small>
+        </div>
+        <div class="al-row">
+          <b>Vendor quote is $240, shipping included</b>
+          <small>Sync Pad · Studio · Mail · 1h ago · ↩ copy</small>
+        </div>
+        <div class="al-div">Clipboard</div>
+        <div class="al-row">
+          <b>https://example.com/budget-q4</b>
+          <small>Safari · just now · ↩ copy · ⌘↩ share</small>
+        </div>
+        <div class="al-foot"><span><kbd>↩</kbd> copy</span><span><kbd>⌘↩</kbd> share</span><span><kbd>⌥↩</kbd> remove</span></div>
+      </div>
+      <figcaption>Sync Pad 1.0, shown with example text</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap key-strip">
+    <div class="keycard"><kbd>↩</kbd><div><h3>Copy</h3><p>Puts that clip on the clipboard and makes it the newest clipboard item. Paste with ⌘V.</p></div></div>
+    <div class="keycard"><kbd>⌘↩</kbd><div><h3>Save</h3><p>Saves a clipboard clip to Sync Pad. Saving the same text again moves it to the top.</p></div></div>
+    <div class="keycard"><kbd>⌥↩</kbd><div><h3>Remove</h3><p>Removes a saved snippet. Clipboard rows stay in Alfred’s own history.</p></div></div>
+  </div>
+</section>
+
+<section id="features" class="section alt">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">Features</p>
+      <h2>Saved snippets first. Then this Mac.</h2>
+      <p>Type <code>pad</code> and the list is already there. The last snippets you saved are on top. This Mac’s clipboard follows them.</p>
+    </header>
+
+    <div class="grid feat-shots">
+      <article class="card shot-card">
+        <div class="shot"><div class="mock mini-win">
+          <div class="al-row on"><b>No Sync Pad snippets yet</b><small>⌘↩ a clipboard clip below to save it</small></div>
+          <div class="al-div">Clipboard</div>
+          <div class="al-row"><b>https://example.com/budget-q4</b><small>Safari · just now</small></div>
+        </div></div>
+        <h3>Ready before the first save</h3>
+        <p>Until you save something, the first row tells you how. Highlight a clipboard clip and press ⌘↩.</p>
+      </article>
+      <article class="card shot-card">
+        <div class="shot"><div class="mock mini-win">
+          <div class="al-search"><img src="assets/icon-256.png" alt="" width="18" height="18"><span class="al-q">pad quote</span></div>
+          <div class="al-row on"><b>Vendor quote is $240, shipping included</b><small>Sync Pad · Studio · Mail</small></div>
+        </div></div>
+        <h3>Search both lists</h3>
+        <p><code>pad quote</code> narrows saved snippets first, then clipboard history. The pad holds the last 30 snippets.</p>
+      </article>
+      <article class="card shot-card">
+        <div class="shot"><div class="mock mini-win">
+          <div class="al-row on"><b>Thursday standup: ship the booth signs</b><small>Sync Pad · MacBook Air · moved to the top</small></div>
+          <div class="al-row"><b>Vendor quote is $240, shipping included</b><small>Sync Pad · Studio · Mail</small></div>
+        </div></div>
+        <h3>Same text, one row</h3>
+        <p>Sharing a clip you already saved moves that snippet to the top. The pad stays a list of 30, newest first.</p>
+      </article>
+    </div>
+
+    <div class="grid feat-mini">
+      <div class="mini"><span class="mi">pad</span><div><h4>Its own keyword</h4><p>Clipboard History stays on <code>clip</code>. Sync Pad is a separate list, so a custom keystroke can live on each row.</p></div></div>
+      <div class="mini"><span class="mi">30</span><div><h4>Last 30 snippets</h4><p>Text only. Images and files stay on the Mac where you copied them.</p></div></div>
+      <div class="mini"><span class="mi">☁</span><div><h4>Rides along with Alfred</h4><p>The scratch file sits next to your synced Alfred preferences. Google Drive carries it to the other Macs.</p></div></div>
+      <div class="mini"><span class="mi">Aa</span><div><h4>Plain text on purpose</h4><p><code>sync-pad.json</code> is a text file. Share only what you would put in Google Drive.</p></div></div>
+      <div class="mini"><span class="mi">↩</span><div><h4>Becomes clipboard history</h4><p>On the other Mac, press Return. That snippet is now the newest clipboard item there.</p></div></div>
+      <div class="mini"><span class="mi">⌥</span><div><h4>Remove when you are done</h4><p>Option-Return drops a saved snippet. It stays until you remove it.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="section">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">How it works</p>
+      <h2>Copy, save, then open it over there.</h2>
+      <p>Give Google Drive a moment to finish <code>sync-pad.json</code> before you look on the other Mac.</p>
+    </header>
+
+    <ol class="steps">
+      <li><span class="n">1</span><h3>Copy some text</h3><p>Copy on this Mac the way you already do. Open Alfred and type <code>pad</code>. Saved snippets are first. Clipboard rows follow the Clipboard divider.</p></li>
+      <li><span class="n">2</span><h3>Save it</h3><p>Highlight a clipboard row and press ⌘Return. Sync Pad writes that text into <code>sync-pad.json</code>, next to your Alfred preferences.</p></li>
+      <li><span class="n">3</span><h3>Take it on the other Mac</h3><p>Type <code>pad</code>, highlight the snippet, and press Return. Paste with ⌘V. The clip is now in that Mac’s Clipboard History.</p></li>
+    </ol>
+
+    <div class="privacy card">
+      <h3>Where the text lives</h3>
+      <ul class="checks">
+        <li>Shared snippets are plain text in <code>sync-pad.json</code>, beside <code>Alfred.alfredpreferences</code>, in the folder Alfred already syncs.</li>
+        <li>The GitHub repository holds the workflow. Your clips stay out of git.</li>
+        <li>Each Mac’s Clipboard History stays on that Mac until you press Return on a shared snippet.</li>
+        <li>There is no account and no analytics. The file syncs only because your Alfred folder syncs.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="install" class="section alt">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">Install</p>
+      <h2>Double-click, then type pad.</h2>
+    </header>
+
+    <div class="grid install-grid">
+      <div class="card">
+        <span class="tag">Recommended</span>
+        <h3>Alfred package</h3>
+        <p>Download <code>Sync.Pad.alfredworkflow</code> and double-click it. Alfred asks to import the workflow. If that bundle ID is already installed, replace it.</p>
+        <a class="btn btn-ghost btn-sm" href="https://github.com/stevencombs/alfred-sync-pad/raw/main/Sync.Pad.alfredworkflow">Download Sync.Pad.alfredworkflow</a>
+      </div>
+      <div class="card">
+        <span class="tag tag-muted">From a clone</span>
+        <h3>Git</h3>
+        <div class="cmd cmd-sm">
+          <code>git clone https://github.com/<wbr>stevencombs/<wbr>alfred-sync-pad.git<br>cd alfred-sync-pad<br>./scripts/install.sh</code>
+          <button class="copy" type="button" data-copy="git clone https://github.com/stevencombs/alfred-sync-pad.git && cd alfred-sync-pad && ./scripts/install.sh" aria-label="Copy git install command">Copy</button>
+        </div>
+        <p><code>install.sh</code> copies the workflow into Alfred’s preferences and reloads it. On Macs that already share that preferences folder, Drive carries the same files across.</p>
+      </div>
+      <div class="card">
+        <span class="tag tag-muted">Requirements</span>
+        <h3>What you need</h3>
+        <ul class="reqs">
+          <li>Alfred 5 with the Powerpack</li>
+          <li><code>/usr/bin/python3</code> (the Xcode Command Line Tools provide it)</li>
+          <li><em>To share between Macs:</em> Alfred preferences syncing through one folder, such as Google Drive</li>
+          <li>A single Mac can still use <code>pad</code> as a saved-snippet list</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="updates" class="section">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">Updates</p>
+      <h2>The same path you used to install.</h2>
+      <p>Sync Pad has no updater inside Alfred, and it is not in the Alfred Gallery. The file on <code>main</code> is the current version. Alfred Preferences → Workflows → Sync Pad shows the version you have. This page shows 1.0.</p>
+    </header>
+
+    <ol class="steps">
+      <li><span class="n">1</span><h3>Shared Alfred preferences</h3><p>The workflow lives in the preferences folder your Macs already sync. When a new copy is installed into that folder, Google Drive brings <code>info.plist</code>, <code>sync_pad.py</code>, and <code>icon.png</code> to the other Macs. Wait until Drive finishes, then type <code>pad</code>. If the old behavior is still there, quit Alfred and open it again.</p></li>
+      <li><span class="n">2</span><h3>You double-clicked the package</h3><p>Download <a class="more" href="https://github.com/stevencombs/alfred-sync-pad/raw/main/Sync.Pad.alfredworkflow">Sync.Pad.alfredworkflow</a> again and double-click it. Alfred matches bundle ID <code>com.retrocombs.syncpad</code> and replaces the workflow you have.</p></li>
+      <li><span class="n">3</span><h3>You cloned the repo</h3><p>Run <code>git pull</code>, then <code>./scripts/install.sh</code>. That copies the workflow into Alfred and reloads it. Run <code>./scripts/package.sh</code> when you also want the downloadable zip rebuilt.</p></li>
+    </ol>
+
+    <div class="privacy card">
+      <h3>What an update leaves alone</h3>
+      <ul class="checks">
+        <li><code>sync-pad.json</code> sits beside the preferences folder, outside the workflow. Replacing Sync Pad leaves your saved snippets in place.</li>
+        <li>Clipboard History is Alfred’s database. An update does not clear it.</li>
+        <li>The keyword stays <code>pad</code> and the bundle ID stays <code>com.retrocombs.syncpad</code>, so the new package replaces this workflow.</li>
+        <li>Let Drive finish before you edit the workflow on a second Mac. The last saved copy of those files is the one Drive keeps.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section alt">
+  <div class="wrap narrow">
+    <header class="sec-head">
+      <p class="kicker">FAQ</p>
+      <h2>Questions, answered.</h2>
+    </header>
+
+    <details open>
+      <summary>How do I get a new version?</summary>
+      <p>There is no automatic update. Macs that share Alfred’s preferences folder pick up the new workflow files when Google Drive finishes syncing that folder. Everyone else downloads <code>Sync.Pad.alfredworkflow</code> again and double-clicks it, or runs <code>git pull</code> and <code>./scripts/install.sh</code>. The <a class="more" href="#updates">Updates</a> section has the three paths.</p>
+    </details>
+    <details open>
+      <summary>Will an update erase saved snippets?</summary>
+      <p>No. Saved snippets live in <code>sync-pad.json</code>, next to <code>Alfred.alfredpreferences</code>. The workflow package is only <code>info.plist</code>, <code>sync_pad.py</code>, and <code>icon.png</code>.</p>
+    </details>
+    <details open>
+      <summary>Is the shared text private?</summary>
+      <p>It is plain text in the folder Alfred syncs, which on this setup is Google Drive. Share only text you are willing to keep there. The GitHub repository does not contain <code>sync-pad.json</code>.</p>
+    </details>
+    <details>
+      <summary>Does Return paste into the front app?</summary>
+      <p>Return copies. Click the document and press ⌘V. The snippet also becomes the newest item in Alfred Clipboard History on that Mac.</p>
+    </details>
+    <details>
+      <summary>Can I share an image or a file?</summary>
+      <p>Sync Pad shares text. Images and files stay on the Mac where you copied them.</p>
+    </details>
+    <details>
+      <summary>What does it cost?</summary>
+      <p>Nothing. Sync Pad is free. If it saves you from mailing a snippet to yourself, a tip is welcome.</p>
+    </details>
+  </div>
+</section>
+
+<section id="apps" class="section">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">More from retroCombs</p>
+      <h2>Other Mac apps, built in the open.</h2>
+      <p>Menu bar apps and this Alfred workflow, each with its own page.</p>
+    </header>
+    <div class="grid apps-grid">
+      <a class="card app-card" href="https://stevencombs.github.io/GrokGauge/">
+        <img src="assets/grokgauge-icon.png" alt="" width="64" height="64">
+        <div><h3>GrokGauge</h3><p>Your SuperGrok and Grok Bot weekly usage as colored rings in the menu bar.</p><span class="more">Visit the GrokGauge page →</span></div>
+      </a>
+      <a class="card app-card" href="https://stevencombs.github.io/ClipGauge/">
+        <img src="assets/clipgauge-icon.png" alt="" width="64" height="64">
+        <div><h3>ClipGauge</h3><p>Local AI that renames and sorts your video and photo clips in place.</p><span class="more">Visit the ClipGauge page →</span></div>
+      </a>
+      <div class="card app-card current">
+        <img src="assets/icon-256.png" alt="" width="64" height="64">
+        <div><h3>Sync Pad <span class="soon">You are here</span></h3><p>An Alfred workflow that shares text clips with your other Macs. Keyword <code>pad</code>.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="support" class="section alt">
+  <div class="wrap">
+    <div class="support card">
+      <img class="logo" src="assets/retrocombs-logo-160.png" srcset="assets/retrocombs-logo-160.png 1x, assets/retrocombs-logo-512.png 3x" width="96" height="96" alt="retroCombs logo">
+      <div class="support-copy">
+        <h2>Free, and built in the open.</h2>
+        <p>Sync Pad was made by Steven “retroCombs” Combs. If it saves you from emailing a snippet to yourself, you can say thanks with a tip.</p>
+      </div>
+      <div class="support-cta">
+        <a class="btn btn-paypal" href="https://paypal.me/stevencombs">Tip via PayPal</a>
+        <a class="btn btn-ghost" href="https://github.com/stevencombs/alfred-sync-pad">★ Star on GitHub</a>
+        <a class="link" href="https://github.com/stevencombs/alfred-sync-pad/issues/new">Report a bug or request a feature</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="brand" href="#top"><img src="assets/icon-256.png" alt="" width="28" height="28"><span>Sync Pad</span></a>
+      <p class="fine">Made by Steven “retroCombs” Combs.<br>Contact: <a href="mailto:retroCombs@icloud.com">retroCombs@icloud.com</a></p>
+    </div>
+    <div class="foot-links">
+      <h4>Project</h4>
+      <a href="https://github.com/stevencombs/alfred-sync-pad">GitHub</a>
+      <a href="https://github.com/stevencombs/alfred-sync-pad/raw/main/Sync.Pad.alfredworkflow">Download</a>
+      <a href="https://github.com/stevencombs/alfred-sync-pad#updates">Updates</a>
+      <a href="#install">Install</a>
+    </div>
+    <div class="foot-links">
+      <h4>Apps</h4>
+      <a href="https://stevencombs.github.io/GrokGauge/">GrokGauge</a>
+      <a href="https://stevencombs.github.io/ClipGauge/">ClipGauge</a>
+      <a href="#top">Sync Pad</a>
+    </div>
+    <div class="foot-links">
+      <h4>retroCombs</h4>
+      <a href="https://www.youtube.com/@retrocombs">YouTube @retroCombs</a>
+      <a href="https://www.youtube.com/@retrocombs-tech">YouTube @retroCombs-Tech</a>
+      <a href="https://x.com/StevenCombs">X @StevenCombs</a>
+      <a href="https://www.retrocombs.com">retrocombs.com</a>
+    </div>
+  </div>
+  <div class="wrap disclaimer">
+    <p><strong>Unofficial.</strong> Sync Pad is not made, endorsed, or supported by Running with Crayons Ltd. Alfred is a trademark of Running with Crayons Ltd.</p>
+    <p>© 2026 Steven Combs (retroCombs)</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.copy').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.getAttribute('data-copy');
+    var done = function () { b.textContent = 'Copied'; b.classList.add('ok'); setTimeout(function () { b.textContent = 'Copy'; b.classList.remove('ok'); }, 1600); };
+    if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(t).then(done, done); }
+    else { var a = document.createElement('textarea'); a.value = t; document.body.appendChild(a); a.select(); try { document.execCommand('copy'); } catch (e) {} a.remove(); done(); }
+  });
+});
+</script>
+</body>
+</html>

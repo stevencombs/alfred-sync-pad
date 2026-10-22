@@ -1,6 +1,23 @@
-# Sync Pad for Alfred
+<p align="center">
+  <img src="workflow/icon.png" width="128" alt="Sync Pad icon">
+</p>
 
-Share clipboard text with your other Macs. Sync Pad is its own workflow. Alfred Clipboard History stays on `clip`.
+<h1 align="center">Sync Pad for Alfred</h1>
+
+<p align="center">
+  Share clipboard text with your other Macs. Alfred Clipboard History stays on <code>clip</code>.<br>
+  <sub>Alfred 5 Powerpack · keyword <code>pad</code> · text clips · free and open source</sub>
+</p>
+
+<p align="center">
+  <a href="https://stevencombs.github.io/alfred-sync-pad/"><img src="https://img.shields.io/badge/Website-Sync%20Pad-2FBF57?logo=apple&amp;logoColor=white" alt="Website"></a>
+  <a href="https://paypal.me/stevencombs"><img src="https://img.shields.io/badge/Tip%20via-PayPal-00457C?logo=paypal&amp;logoColor=white" alt="Tip via PayPal"></a>
+  <a href="https://www.youtube.com/@retroCombs-Tech"><img src="https://img.shields.io/badge/YouTube-%40retroCombs--Tech-FF0000?logo=youtube&amp;logoColor=white" alt="YouTube @retroCombs-Tech"></a>
+</p>
+
+<p align="center"><b>🌐 <a href="https://stevencombs.github.io/alfred-sync-pad/">Visit the Sync Pad page →</a></b></p>
+
+Sync Pad is its own workflow. Alfred Clipboard History stays on `clip`.
 
 The keyword is `pad`. Saved snippets are listed first, newest at the top. This Mac's clipboard history follows them. Return copies the highlighted clip and makes it the newest clipboard item.
 
@@ -11,6 +28,7 @@ The keyword is `pad`. Saved snippets are listed first, newest at the top. This M
 | Alfred | 5, with the Powerpack |
 | Version | 1.0 |
 | Source | https://github.com/stevencombs/alfred-sync-pad |
+| Page | https://stevencombs.github.io/alfred-sync-pad/ |
 
 On the Macs that already sync Alfred preferences through Google Drive, the workflow is already installed. This repository is the source copy: the script, the icon, the Alfred package, and these instructions.
 
@@ -28,6 +46,8 @@ The shared text is not in this repository. It lives in `sync-pad.json` next to y
 alfred-sync-pad/
 ├── README.md
 ├── Sync.Pad.alfredworkflow          ← double-click to install
+├── .github/workflows/pages.yml      ← publishes site/ to GitHub Pages
+├── site/                            ← landing page
 ├── scripts/
 │   ├── install.sh                   ← copy workflow/ into Alfred
 │   ├── export-from-alfred.sh        ← copy Alfred's copy back here
@@ -88,6 +108,31 @@ cd "$HOME/Google Drive (Home)/GitHub Repos/stevencombs/alfred-sync-pad"
 ```
 
 `install.sh` copies `info.plist`, `sync_pad.py`, and `icon.png` into the synced workflow folder and tells Alfred to reload bundle ID `com.retrocombs.syncpad`.
+
+## Updates
+
+Sync Pad does not check for updates, and it is not in the Alfred Gallery. The package on `main` is the current version. Alfred Preferences → Workflows → Sync Pad shows the version you have. The [landing page](https://stevencombs.github.io/alfred-sync-pad/#updates) shows the current one.
+
+Saved snippets live in `sync-pad.json`, next to `Alfred.alfredpreferences`. Replacing the workflow leaves that file, and Alfred's Clipboard History, alone.
+
+### Macs that sync Alfred preferences
+
+The installed workflow is inside the synced preferences folder. After `./scripts/install.sh` runs on one of those Macs, Google Drive copies `info.plist`, `sync_pad.py`, and `icon.png` to the others. Wait until Drive finishes, then type `pad`. If Alfred still runs the previous script, quit Alfred and open it again.
+
+Let Drive finish before you edit the workflow on another Mac. Two Macs writing the same files at once keep whichever copy Drive saves last.
+
+### A double-clicked install
+
+Download [Sync.Pad.alfredworkflow](https://github.com/stevencombs/alfred-sync-pad/raw/main/Sync.Pad.alfredworkflow) again and double-click it. Alfred matches bundle ID `com.retrocombs.syncpad` and replaces the workflow.
+
+### A git clone
+
+```bash
+git pull
+./scripts/install.sh
+```
+
+`install.sh` copies `workflow/` into Alfred and reloads bundle ID `com.retrocombs.syncpad`. Run `./scripts/package.sh` first when you also want the downloadable zip rebuilt.
 
 ## Use it
 
